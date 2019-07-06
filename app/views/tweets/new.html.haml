@@ -1,0 +1,10 @@
+.new-contents
+  = form_for @tweet do |f|
+    %h3 編集する
+    .new-form
+      = f.label :text
+      = f.text_field :text
+    .new-form
+      = f.label :video
+      = f.file_field :video
+    = f.submit "SENT",class:"btn_edit"

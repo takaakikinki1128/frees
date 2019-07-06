@@ -1,0 +1,7 @@
+.edit-contents
+  = form_for  @tweet do |f|
+    %h3 編集する
+    .edit-form
+      = f.label :text,class:"edit_text"
+      = f.text_field :text
+      = f.submit "SENT",class:"btn_edit"

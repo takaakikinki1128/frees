@@ -1,0 +1,17 @@
+.login-contents
+  .log-in ログイン
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .log-from
+      = f.label :メールアドレス
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email",class:"divlog"
+    .log-from
+      = f.label :パスワード
+      %br/
+      = f.password_field :password, autocomplete: "current-password",class:"divlog"
+    - if devise_mapping.rememberable?
+      .log-from
+        = f.check_box :remember_me,class:"check-btn"
+        = f.label :確認
+    .login-action
+      = f.submit "ログイン",class:"login-btn"

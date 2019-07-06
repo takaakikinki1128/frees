@@ -1,0 +1,9 @@
+.edit-comment-contents
+  = form_for [@tweet,@comment] do |f|
+    .comments-edit
+      %h3 編集する
+      .edit-form
+        = f.label :text
+        = f.text_field :text
+      
+    = f.submit "SENT",class:"btn_edit"

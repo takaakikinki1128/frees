@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Frees
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .header
+      .header-bar
+        .header-name
+          %a{:href => "/"} frees
+        .nav
+          - if user_signed_in?
+            .nickname-nav 
+              = current_user.nickname
+            .header-link
+              = link_to "マイページ","/users/#{current_user.id}", method: :get
+              %div
+                .log-out
+                  = link_to "掲載する" ,"/tweets/new", method: :get,class:"link-btn"
+                  = link_to "ログアウト" ,destroy_user_session_path, method: :delete,class:"link-btn"
+          - else
+            .login-nav
+              = link_to "ログイン",new_user_session_path,class:"link-btn"
+              = link_to "新規登録",new_user_registration_path,class:"link-btn"
+        = yield

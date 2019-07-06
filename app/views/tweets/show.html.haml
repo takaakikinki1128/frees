@@ -1,0 +1,43 @@
+.tweet-show-contents
+  .show-post
+    - if user_signed_in? && current_user.id == @tweet.user_id
+      .more
+        = simple_format(@tweet.text)
+        = link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get
+        = link_to '削除', "/tweets/#{@tweet.id}", method: :delete
+
+    %span.name
+      %a{:href => "/users/#{@tweet.user.id}"}
+        %span 投稿者
+        = @tweet.user.nickname
+
+  .comments-tweet
+    - if current_user && @tweet.user_id != current_user.id
+      = form_for [@tweet,@comment] do |f|
+        %h3 ----コメントを書く----
+        .comment_text
+          = f.label :text
+          = f.text_field :text
+        
+        .rate-btn
+          = f.submit "SENT",class:"btn"
+
+
+.comments
+  %p ＜コメント一覧＞
+  .strong_comment
+    - if @comments
+      - @comments.each do |comment|
+        .one_comment
+          .link_commenter
+            = link_to comment.user.nickname, "/users/#{comment.user_id}"
+          .commenter_text
+            = (comment.text).truncate(15,omission:"...")
+         
+          - if user_signed_in? && current_user.id == comment.user_id
+            .link_form
+              .delete_link
+                = link_to "削除", "/tweets/#{params[:id]}/comments/#{comment.id}",method: :delete,class:"comments-btn"
+              .edit_link
+                = link_to "編集", "/tweets/#{params[:id]}/comments/#{comment.id}/edit",method: :get,class:"comments-btn"
+
