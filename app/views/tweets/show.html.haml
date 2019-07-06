@@ -3,6 +3,9 @@
     - if user_signed_in? && current_user.id == @tweet.user_id
       .more
         = simple_format(@tweet.text)
+        = video_tag @tweet.video_url.to_s,loop: true, controls: true, width: 300, id: "mv" if @tweet.video.present?
+        = image_tag @tweet.image.url,loop: true, controls: true, width: 225, id: "img" if @tweet.image.present?
+
         = link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get
         = link_to '削除', "/tweets/#{@tweet.id}", method: :delete
 
