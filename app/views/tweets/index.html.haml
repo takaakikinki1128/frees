@@ -2,7 +2,8 @@
   - @tweets.each do |tweet|
     .more
       .more_list
-        = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 500, id: "mv"
+        = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 500, id: "mv" if tweet.video.present?
+        = image_tag tweet.image.url,loop: true, controls: true, width: 400, id: "img" if tweet.image.present?
 
         = simple_format(tweet.text)
         %span.name
