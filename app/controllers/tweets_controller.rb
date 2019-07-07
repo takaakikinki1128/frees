@@ -38,7 +38,9 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     @comment= Comment.new
     @comments = @tweet.comments.includes(:user)
-    
+    @stars = @tweet.stars
+    @stars_count = @stars.count
+    @star = @stars.where("user_id = ?",current_user.id)
   end
 
   private

@@ -3,10 +3,11 @@
     = @nickname
     さんの投稿一覧
   - @tweets.each do |tweet|
+    = simple_format(tweet.name)
     = simple_format(tweet.text)
     .user-show-page
-      = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 550, id: "mv"
-      = image_tag tweet.image.url,loop: true, controls: true, width: 550, id: "img"
+      = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 500, id: "mv" if tweet.video.present?
+      = image_tag tweet.image.url,loop: true, controls: true, width: 300, id: "img" if tweet.image.present?
       
     .form_tag
       - if user_signed_in? && current_user.id == tweet.user.id

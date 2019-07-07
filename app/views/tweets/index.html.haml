@@ -4,8 +4,7 @@
       .more_list
         = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 300, id: "mv" if tweet.video.present?
         = image_tag tweet.image.url,loop: true, controls: true, width: 225, id: "img" if tweet.image.present?
-
-        = simple_format(tweet.text)
+        = simple_format(tweet.name)
         %span.name
           %a{href:user_path(tweet.user.id)}
             %span 投稿者
