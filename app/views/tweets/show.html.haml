@@ -25,49 +25,40 @@
           = f.label :text
           = f.text_field :text
           = f.submit "SENT",class:"btn"
-    .tweet-show-contents
-      - if user_signed_in?
-        - if @star.present?
-          - @star.each do |star|
-            .item-button-container__left__dislike
-              =link_to tweet_star_path(@tweet.id,star.id), method: "DELETE"  do
-                %i.far.fa-star
-                %span 
-                  = @stars_count
-        - else
-          .item-button-container__left__like
-            =link_to tweet_stars_path(@tweet.id), method: "POST"  do
+  
+      - if @star.present?
+        - @star.each do |star|
+          .item-button-container__left__dislike
+            =link_to tweet_star_path(@tweet.id,star.id), method: "DELETE"  do
               %i.far.fa-star
-              %span
+              %span 
                 = @stars_count
-      -else
+      - else
         .item-button-container__left__like
-          %i.fas.fa-heart
-            %span 
-              = @tweet.stars_count
-
-
-
-
+          =link_to tweet_stars_path(@tweet.id), method: "POST"  do
+            %i.far.fa-star
+            %span
+              = @stars_count
+    -else
+      .item-button-container__left__like
+        %i.fas.fa-heart
+          %span 
+            = @stars_count
 .comments
   %p ＜コメント一覧＞
-  .strong_comment
-  %i.fas.fa-heart
-    %span 
-      = @stars_count
-    - if @comments
-      - @comments.each do |comment|
-        .one_comment
-          .link_commenter
-            = link_to comment.user.nickname, "/users/#{comment.user_id}"
-          .commenter_text
-            = (comment.text).truncate(15,omission:"...")
-            
-          - if user_signed_in? && current_user.id == comment.user_id
-            .link_form
-              .delete_link
-                = link_to "削除", "/tweets/#{params[:id]}/comments/#{comment.id}",method: :delete,class:"comments-btn"
-              .edit_link
-                = link_to "編集", "/tweets/#{params[:id]}/comments/#{comment.id}/edit",method: :get,class:"comments-btn"
+  - if @comments
+    - @comments.each do |comment|
+      .one_comment
+        .link_commenter
+          = link_to comment.user.nickname, "/users/#{comment.user_id}"
+        .commenter_text
+          = (comment.text).truncate(15,omission:"...")
+          
+        - if user_signed_in? && current_user.id == comment.user_id
+          .link_form
+            .delete_link
+              = link_to "削除", "/tweets/#{params[:id]}/comments/#{comment.id}",method: :delete,class:"comments-btn"
+            .edit_link
+              = link_to "編集", "/tweets/#{params[:id]}/comments/#{comment.id}/edit",method: :get,class:"comments-btn"
 
 
