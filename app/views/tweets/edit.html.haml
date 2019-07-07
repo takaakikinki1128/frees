@@ -2,6 +2,19 @@
   = form_for  @tweet do |f|
     %h3 編集する
     .edit-form
-      = f.label :text,class:"edit_text"
+      = f.label :店名,class:"edit_text"
+      = f.text_field :name
+      
+    .edit-form
+      = f.label :紹介文,class:"edit_text"
       = f.text_field :text
-      = f.submit "SENT",class:"btn_edit"
+
+    .edit-form
+      = f.label :動画,class:"edit_text"
+      = f.file_field :video
+
+    .edit-form
+      = f.label :画像,class:"edit_text"
+      = f.file_field :image
+
+    = f.submit "SENT",class:"btn_edit"
