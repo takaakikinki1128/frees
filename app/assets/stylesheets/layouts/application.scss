@@ -1,0 +1,41 @@
+.header{  
+  width:100%;
+  position: relative;
+  .header-name{
+    text-align: center;
+    a{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      color:#333;
+      cursor: pointer;
+    }
+  }
+  .nav{
+    .nickname-nav{
+      float: left;
+      font-size: 25px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .header-link{
+      a{
+        text-decoration: none;
+        font-size: 25px;
+        color: #0099e8;
+      }
+    }
+    .log-out{
+      padding-left:900px;
+      
+    }
+  }
+  .login-nav{
+    float: right;
+    a{
+      text-decoration: none;
+      font-size: 25px;
+      color: #0099e8;
+    }
+  }
+}
