@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  
   def index
     @tweets = Tweet.includes(:user).page(params[:page]).per(10).order("created_at DESC")
    
@@ -41,7 +42,7 @@ class TweetsController < ApplicationController
     @comments = @tweet.comments.includes(:user)
     @stars = @tweet.stars
     @stars_count = @stars.count
-    @star = @stars.where("user_id = ?",current_user.id)
+    # @star = @stars.where("user_id = ?",current_user.id)
   end
 
   private
@@ -51,7 +52,7 @@ class TweetsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless user_signed_in?
+    redirect_to action: :home unless user_signed_in?
   end
 
 end

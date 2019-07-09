@@ -1,0 +1,60 @@
+.index-contents{
+  height:100%;
+  width:100%;
+  background: url(backgroundimage.jpg);
+
+  .index-all{
+    margin-bottom: 4px;
+    .title-username{
+      padding-top:10px;
+      padding-left:20px;
+      .home-icon{
+        color:rgba(221, 23, 23, 0.76);
+        font-size: 20px;
+        
+      }
+      .user-icon{
+        color: blue;
+        padding-left:50px;
+        a{
+          text-decoration: none;
+          color: black;
+
+        }
+
+      }
+      .show-icon{
+        color: blue;
+        padding-left:50px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+      }
+      .edit-icon{
+        color: blue;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+      }
+      .delete-icon{
+        color: blue;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+      }
+      
+    }
+    .video-image{
+      margin-top:10px;
+      margin-left:40px;
+      .img{
+        padding-left:20px;
+      }
+    }
+    
+  }
+
+}
