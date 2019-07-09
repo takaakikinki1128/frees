@@ -1,39 +1,22 @@
 .index-contents
-  - @tweets.each do |tweet|
-    .more
-      .more_list
-        = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 300, id: "mv" if tweet.video.present?
-        = image_tag tweet.image.url,loop: true, controls: true, width: 225, id: "img" if tweet.image.present?
-        = simple_format(tweet.name)
-        %span.name
+  .index-all
+    - @tweets.each do |tweet|
+      .title-username
+        %i.fas.fa-home.home-icon
+        = tweet.name
+        %i.far.fa-user.user-icon
           %a{href:user_path(tweet.user.id)}
-            %span 投稿者
             = tweet.user.nickname
-        = link_to '詳細', "/tweets/#{tweet.id}", method: :get
-      - if user_signed_in? && current_user.id == tweet.user_id
-        = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get
-        = link_to '削除', "/tweets/#{tweet.id}", method: :delete
-    -# - if current_user && tweet.user_id != current_user.id
-    -#   - if @star.present?
-    -#         - @star.each do |star|
-    -#           .item-button-container__left__dislike
-    -#             =link_to tweet_star_path(@tweet.id,star.id), method: "DELETE"  do
-    -#               %i.far.fa-star
-    -#               %span 
-    -#                 = @stars_count
-    -#       - else
-    -#         .item-button-container__left__like
-    -#           =link_to tweet_stars_path(@tweet.id), method: "POST"  do
-    -#             %i.far.fa-star
-    -#             %span
-    -#               = @stars_count
-    -#     -else
-    -#       .item-button-container__left__like
-    -#         %i.fas.fa-heart
-    -#           %span 
-    -#             = @stars_count
-
-            
-            
+        %i.far.fa-clipboard.show-icon
+          = link_to '詳細', "/tweets/#{tweet.id}", method: :get
+        - if user_signed_in? && current_user.id == tweet.user_id
+          %i.far.fa-edit.edit-icon
+            = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get
+          %i.far.fa-trash-alt.delete-icon
+            = link_to '削除', "/tweets/#{tweet.id}", method: :delete
+      .video-image
+        = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 250,class:"mv" if tweet.video.present?
+        = image_tag tweet.image.url,loop: true, controls: true, width: 250,class: "img" if tweet.image.present?
+      
 
     　

@@ -1,6 +1,7 @@
 .header{  
   width:100%;
-  position: relative;
+  background: url(backgroundimage.jpg);
+  
   .header-name{
     text-align: center;
     a{
@@ -8,34 +9,46 @@
       font-size: 50px;
       text-decoration: none;
       font-weight: bold;
-      color:#333;
+      color:rgb(180, 177, 177);
       cursor: pointer;
     }
   }
   .nav{
     .nickname-nav{
-      float: left;
       font-size: 25px;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    .header-link{
+      color:rgb(92, 90, 90);
+      .header-icon{
+        padding-left:10px;
+      }
       a{
+        border: 1px solid black;
+        background: #fff;
+        color: black;
+        font-size: 14px;
         text-decoration: none;
-        font-size: 25px;
-        color: #0099e8;
+        padding: 10px 16px;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 30px;
+      }
+      .link-btn{
+        float: right;
       }
     }
-    .log-out{
-      padding-left:900px;
-      
-    }
+    
   }
   .login-nav{
     float: right;
     a{
+      border: 1px solid black;
+      background: #fff;
+      color: black;
+      font-size: 14px;
       text-decoration: none;
-      font-size: 25px;
-      color: #0099e8;
+      padding: 10px 16px;
+      border-radius: 4px;
+      text-align: center;
+      line-height: 30px;
     }
   }
 }
