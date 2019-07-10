@@ -1,7 +1,7 @@
 .header{  
   width:100%;
   background: url(backgroundimage.jpg);
-  
+
   .header-name{
     text-align: center;
     a{
@@ -31,15 +31,10 @@
         text-align: center;
         line-height: 30px;
       }
-      .link-btn{
-        float: right;
-      }
+      
     }
-    
-  }
-  .login-nav{
-    float: right;
-    a{
+    .log-btn{
+      margin-left:30px;
       border: 1px solid black;
       background: #fff;
       color: black;
@@ -48,7 +43,21 @@
       padding: 10px 16px;
       border-radius: 4px;
       text-align: center;
-      line-height: 30px;
     }
+    
   }
+  // .login-nav{
+  //   float: right;
+  //   a{
+  //     border: 1px solid black;
+  //     background: #fff;
+  //     color: black;
+  //     font-size: 14px;
+  //     text-decoration: none;
+  //     padding: 10px 16px;
+  //     border-radius: 4px;
+  //     text-align: center;
+  //     line-height: 30px;
+  //   }
+  // }
 }

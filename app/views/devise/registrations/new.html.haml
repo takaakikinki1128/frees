@@ -1,25 +1,23 @@
 .sign-page
-  .sign-up 新規登録
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "devise/shared/error_messages", resource: resource
-    .field
-      = f.label :ニックネーム
-      %br/
-      = f.text_field :nickname, autofocus: true, maxlength: "10",placeholder: '例）takashi',class:"nickname-form"
-    .field
-      = f.label :メールアドレス
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email",class:"field-form"
-    .field
-      = f.label :パスワード
-      - if @validatable
-        %em
-          (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "new-password",class:"field-form"
-    .field
-      = f.label :パスワード（確認）
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password",class:"field-form"
-    .actions
-      = f.submit "完了",class:"sing-btn"
+  .sign-contents
+    .sign-up 新規登録
+    .one-signed
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          = f.label :ニックネーム,class:"nickname"
+          %br/
+          = f.text_field :nickname, autofocus: true, maxlength: "10",placeholder: '例）takashi',class:"sign-form"
+        .field
+          = f.label :メールアドレス,class:"mail-adress"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: '例）takashi@gmail.com',class:"sign-form"
+        .field
+          = f.label :パスワード,class:"password"
+          - if @validatable
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "new-password",placeholder: '6文字以上',class:"sign-form"
+        .actions
+          = f.submit "完了",class:"sing-btn"

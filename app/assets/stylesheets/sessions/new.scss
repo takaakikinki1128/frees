@@ -1,0 +1,42 @@
+.login-page{
+  background-image:radial-gradient(ellipse at center, rgba(5, 5, 5, 0) 40%,rgba(17, 16, 16, 0.5) 60%,rgb(0, 0, 0) 100%), url(26895.jpg);
+  background-size:cover; 
+  background-repeat:  no-repeat;
+  background-position: center;
+  // margin-top:40px;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  z-index: 1;
+  .login-contents{
+    text-align: center;
+    padding-top:50px;
+    color:#fff;
+    .log-in{
+      font-family: 'Times New Roman', Times, serif;
+      font-size:30px;
+      padding-top:10px;
+    }
+    .one-login{
+      .log-from{
+        padding-top:15px;
+        .divlog{
+          width:250px;
+          height:40px;
+          font-size:20px;
+        }
+      }
+      .login-action{
+        padding-top:40px;
+        .login-btn{
+          height: 50px;
+          width: 200px;
+          background-color: rgb(19, 18, 18);
+          color:#fff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
