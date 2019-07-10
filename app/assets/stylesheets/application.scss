@@ -14,8 +14,13 @@
  *= require_self
  */
 
- @import "config/reset";
- @import "layouts/application";
- @import "tweets/index.scss";
+@import "config/reset";
+@import "layouts/application";
+@import "tweets/index.scss";
+@import "slick-theme";
+@import "slick";
+@import "registrations/new";
+@import "sessions/new";
+
 
 
