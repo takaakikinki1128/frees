@@ -1,0 +1,138 @@
+.show-tweets{
+  background: url(backgroundimage.jpg);
+  .show-tweet-name{
+    padding-top:10px;
+    padding-left:20px;
+    .tweet-show-icon{
+      color:rgba(221, 23, 23, 0.76);
+      font-size: 20px;
+    }
+    .show-user-icon{
+      color: blue;
+      padding-left:50px;
+      a{
+        text-decoration: none;
+        color: black;
+        font-size:18px;
+      }
+    }
+    .show-edit-icon{
+      color: blue;
+      padding-left:50px;
+      a{
+        text-decoration: none;
+        color: black;
+        font-size:18px;
+      }
+    }
+    .show-delete-icon{
+      color: blue;
+      a{
+        text-decoration: none;
+        color: black;
+        font-size:18px;
+      }
+    }
+  }
+  .show-tweet-text{
+    text-align: center;
+  }
+  .comments-tweet{
+    text-align: center;
+    padding-top:30px;
+    .comment-new{
+      .aaa{
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        font-size:20px;
+      }
+      .comment_text{
+        display:none;
+        .comment-btn{
+          border: 1px solid black;
+          background: #fff;
+          color: black;
+          font-size: 14px;
+          text-decoration: none;
+          width:100px;
+          height:30px;
+          cursor: pointer;
+
+        }
+        .comment-field{
+          width:200px;
+          height:30px;
+        }
+      }
+    }
+    .star-counts{
+      .item-button-click{
+        .star-click-icon{
+          color:#888;
+        }
+      }
+      .item-button-dislike{
+        .star-delete-icon{
+          color:red;
+        }
+      }
+    }
+    .item-button-like{
+      .star-keep-icon{
+        color:red;
+      }
+    }
+  }
+  
+}
+.comments{
+  background: url(backgroundimage.jpg);
+  height:200vh ;
+  .comment-contents{
+    text-align: center;
+    font-size: 20px;
+    .comment-icon{
+      color: blue;
+      font-size: 20px;
+    }
+  }
+  .comment-all{ 
+    padding-left:90px;
+    .one-comment{
+      margin-top:20px;
+      .commenter_text{
+        padding-top:15px;
+      }
+      .commenter-icon{
+        color: #333;
+        font-size: 20px;
+        
+        a{
+          text-decoration: none;
+          color: black;
+          font-size:20px;
+        }
+      }
+      .link_form{
+        padding-top:15px;
+        .commenter-delete-icon{
+          color:blue;
+          a{
+            color:black;
+            text-decoration: none;
+            font-size:18px;
+          }
+        }
+        .commenter-edit-icon{
+          color:blue;
+          a{
+            color:black;
+            text-decoration: none;
+            font-size:18px;
+          }
+        }
+      }
+    }
+  }
+}

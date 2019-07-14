@@ -1,64 +1,65 @@
-.show-contents
-  = simple_format(@tweet.text)
-  = video_tag @tweet.video_url.to_s,loop: true, controls: true, width: 300, id: "mv" if @tweet.video.present?
-  = image_tag @tweet.image.url,loop: true, controls: true, width: 300, id: "img" if @tweet.image.present?
-
-
-  .show-post
+.show-tweets
+  .show-tweet-name
+    %i.fas.fa-home.tweet-show-icon
+    = @tweet.name
+    %i.far.fa-user.show-user-icon
+      = link_to @tweet.user.nickname,"/users/#{@tweet.user.id}"
     - if user_signed_in? && current_user.id == @tweet.user_id
-      .more
-       
-
+      %i.far.fa-edit.show-edit-icon
         = link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get
+      %i.far.fa-trash-alt.show-delete-icon
         = link_to '削除', "/tweets/#{@tweet.id}", method: :delete
 
-    %span.name
-      %a{:href => "/users/#{@tweet.user.id}"}
-        %span 投稿者
-        = @tweet.user.nickname
-
+  .show-tweet-text
+    = @tweet.text
+  .video-img
+    = video_tag @tweet.video_url.to_s,loop: true, controls: true, width: 250, id: "mv" if @tweet.video.present?
+    = image_tag @tweet.image.url,loop: true, controls: true, width: 250, id: "img" if @tweet.image.present?
+    
   .comments-tweet
     - if current_user && @tweet.user_id != current_user.id
       = form_for [@tweet,@comment] do |f|
-        %h3 ----コメントを書く----
-        .comment_text
-          = f.label :text
-          = f.text_field :text
-          = f.submit "SENT",class:"btn"
-  
-      - if @star.present?
-        - @star.each do |star|
-          .item-button-container__left__dislike
-            =link_to tweet_star_path(@tweet.id,star.id), method: "DELETE"  do
-              %i.far.fa-star
-              %span 
+        .comment-new
+          .aaa
+            コメントを書く
+        
+          .comment_text
+            = f.label :コメント
+            = f.text_field :text,placeholder:"40文字以内",class:"comment-field"
+            = f.submit "SENT",class:"comment-btn"
+      .star-counts
+        - if @star.present?
+          - @star.each do |star|
+            .item-button-dislike
+              =link_to tweet_star_path(@tweet.id,star.id), method: "DELETE"  do
+                %i.fas.fa-heart.star-delete-icon
+                  = @stars_count
+        - else
+          .item-button-click
+            =link_to tweet_stars_path(@tweet.id), method: "POST"  do
+              %i.fas.fa-heart.star-click-icon
                 = @stars_count
-      - else
-        .item-button-container__left__like
-          =link_to tweet_stars_path(@tweet.id), method: "POST"  do
-            %i.far.fa-star
-            %span
-              = @stars_count
     -else
-      .item-button-container__left__like
-        %i.fas.fa-heart
-          %span 
-            = @stars_count
+      .item-button-like
+        %i.fas.fa-heart.star-keep-icon
+          = @stars_count
 .comments
-  %p ＜コメント一覧＞
-  - if @comments
-    - @comments.each do |comment|
-      .one_comment
-        .link_commenter
-          = link_to comment.user.nickname, "/users/#{comment.user_id}"
-        .commenter_text
-          = (comment.text).truncate(15,omission:"...")
-          
-        - if user_signed_in? && current_user.id == comment.user_id
-          .link_form
-            .delete_link
-              = link_to "削除", "/tweets/#{params[:id]}/comments/#{comment.id}",method: :delete,class:"comments-btn"
-            .edit_link
-              = link_to "編集", "/tweets/#{params[:id]}/comments/#{comment.id}/edit",method: :get,class:"comments-btn"
+  .comment-contents
+    コメント一覧
+    %i.far.fa-comment-dots.comment-icon
+  .comment-all
+    - if @comments
+      - @comments.each do |comment|
+        .one-comment
+          %i.far.fa-user.commenter-icon
+            = link_to comment.user.nickname, "/users/#{comment.user_id}"
+          .commenter_text
+            = comment.text
+          - if user_signed_in? && current_user.id == comment.user_id
+            .link_form
+              %i.far.fa-trash-alt.commenter-delete-icon
+                = link_to "削除", "/tweets/#{params[:id]}/comments/#{comment.id}",method: :delete,class:"comments-btn"
+              %i.far.fa-edit.commenter-edit-icon
+                = link_to "編集", "/tweets/#{params[:id]}/comments/#{comment.id}/edit",method: :get,class:"comments-btn"
 
 
