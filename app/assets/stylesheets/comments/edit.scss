@@ -1,0 +1,32 @@
+.edit-comment-contents{
+  background: url(backgroundimage.jpg);
+  height:100vh;
+  .comments-edit{
+    text-align: center;
+    h3{
+      font-size:20px;
+      padding:20px 0;
+    }
+    .edit-form{
+      padding:20px 0 ;
+      .commenter-text_field{
+        width:200px;
+        height:40px;
+        font-size:20px;
+      }
+    }
+    .commenter-actions{
+      padding-top:30px;
+      .comment-edit-btn{
+        border: 1px solid black;
+        background: #fff;
+        color: black;
+        font-size: 14px;
+        text-decoration: none;
+        width:200px;
+        height:50px;
+        cursor: pointer;
+      }
+    }
+  }
+}

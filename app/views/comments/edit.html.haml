@@ -3,7 +3,7 @@
     .comments-edit
       %h3 編集する
       .edit-form
-        = f.label :text
-        = f.text_field :text
-      
-    = f.submit "SENT",class:"btn_edit"
+        = f.label :コメント
+        = f.text_field :text,class:"commenter-text_field"
+      .commenter-actions
+        = f.submit "SENT",class:"comment-edit-btn"

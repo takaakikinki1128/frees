@@ -15,12 +15,12 @@
           %a{href:user_path(tweet.user.id)}
             = tweet.user.nickname
         %i.far.fa-clipboard.show-icon
-          = link_to '詳細', "/tweets/#{tweet.id}", method: :get
+          = link_to '詳細', "/tweets/#{tweet.id}", method: :get,class:"contents-btn"
         - if user_signed_in? && current_user.id == tweet.user_id
           %i.far.fa-edit.edit-icon
-            = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get
+            = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get,class:"contents-btn"
           %i.far.fa-trash-alt.delete-icon
-            = link_to '削除', "/tweets/#{tweet.id}", method: :delete
+            = link_to '削除', "/tweets/#{tweet.id}", method: :delete,class:"contents-btn"
       .video-image
         = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 250,class:"mv" if tweet.video.present?
         = image_tag tweet.image.url,loop: true, controls: true, width: 250,class: "img" if tweet.image.present?

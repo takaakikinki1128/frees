@@ -1,0 +1,50 @@
+.edit-contents{
+  background: url(backgroundimage.jpg);
+  height:100vh;
+  .edit-one{
+    text-align: center;
+    padding-top:30px;
+    h3{
+      font-size:30px;
+    }
+    .edit-form{
+      padding-top:20px;
+      .edit_text{
+        font-size:20px;
+      }
+      .edit_label{
+        font-size:20px;
+      }
+      .edit-link{
+        width:250px;
+        height:40px;
+        font-size:20px;
+      }
+      .edit-links{
+        width:250px;
+        height:40px;
+        font-size:20px;
+        margin-right: 15px;
+      }
+      .edit_item{
+        padding-left:100px;
+        font-size:20px;
+      }
+    }
+    .actions-edits{
+      padding-top:40px;
+      .btn_edit{
+        border: 1px solid black;
+        background: #fff;
+        color: black;
+        font-size: 14px;
+        text-decoration: none;
+        width:200px;
+        height:50px;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+      }
+    }
+  }
+}

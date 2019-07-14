@@ -1,0 +1,52 @@
+.show-contents{
+  background: url(backgroundimage.jpg);
+  height:100vh;
+  .myuser-name{
+    font-size:20px;
+    text-align: center;
+    padding-top:20px;
+    .show-home-icon{
+      color: blue;
+      font-size:20px;
+    }
+  }
+  .one-show{
+    padding-top:20px;
+    .show-name{
+      padding-top:10px;
+      padding-left:20px;
+      .show-home-icon{
+        color:rgba(221, 23, 23, 0.76);
+        font-size: 20px;
+      }
+      .show-edit-icon{
+        color: blue;
+        padding-left:50px;
+        a{
+          text-decoration: none;
+          color: black;
+          font-size:18px;
+        }
+      }
+      .show-delete-icon{
+        color: blue;
+        a{
+          text-decoration: none;
+          color: black;
+          font-size:18px;
+        }
+      }
+      .show-second-icon{
+        color: blue;
+        a{
+          text-decoration: none;
+          color: black;
+          font-size:18px;
+        }
+      }
+      .show-text{
+        text-align: center;
+      }
+    }
+  }
+}

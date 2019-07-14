@@ -18,7 +18,7 @@ class TweetsController < ApplicationController
     tweet = Tweet.find(params[:id])
     if tweet.user_id == current_user.id
       tweet.delete
-
+      redirect_to root_path
     end
     
   end
@@ -39,7 +39,7 @@ class TweetsController < ApplicationController
   def show
     @tweet = Tweet.find(params[:id])
     @comment= Comment.new
-    @comments = @tweet.comments.includes(:user)
+    @comments = @tweet.comments.includes(:user).order("created_at DESC")
     @stars = @tweet.stars
     @stars_count = @stars.count
     # @star = @stars.where("user_id = ?",current_user.id)
