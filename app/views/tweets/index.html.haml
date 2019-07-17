@@ -12,8 +12,7 @@
         %i.fas.fa-home.home-icon
         = tweet.name
         %i.far.fa-user.user-icon
-          %a{href:user_path(tweet.user.id)}
-            = tweet.user.nickname
+          =link_to tweet.user.nickname,user_path(tweet.user.id),class:"index-user-name"
         %i.far.fa-clipboard.show-icon
           = link_to '詳細', "/tweets/#{tweet.id}", method: :get,class:"contents-btn"
         - if user_signed_in? && current_user.id == tweet.user_id
@@ -24,6 +23,7 @@
       .video-image
         = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 250,class:"mv" if tweet.video.present?
         = image_tag tweet.image.url,loop: true, controls: true, width: 250,class: "img" if tweet.image.present?
-      
+    = paginate(@tweets)
+
 
     　

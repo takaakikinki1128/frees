@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   
   def index
-    @tweets = Tweet.includes(:user).page(params[:page]).per(10).order("created_at DESC")
+    @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("created_at DESC")
    
   end
 
@@ -39,10 +39,12 @@ class TweetsController < ApplicationController
   def show
     @tweet = Tweet.find(params[:id])
     @comment= Comment.new
-    @comments = @tweet.comments.includes(:user).order("created_at DESC")
+    @comments = @tweet.comments.includes(:user).order("created_at DESC").page(params[:page]).per(4)
     @stars = @tweet.stars
     @stars_count = @stars.count
-    # @star = @stars.where("user_id = ?",current_user.id)
+    if user_signed_in?
+      @star = @stars.where("user_id = ?",current_user.id)
+    end
   end
 
   private

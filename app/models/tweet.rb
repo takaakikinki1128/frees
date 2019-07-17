@@ -5,6 +5,10 @@ class Tweet < ApplicationRecord
   has_many :comments
   has_many :stars, dependent: :destroy
 
+  validates :name,presence: true,
+  length: {maximum: 10}
+  validates :text,presence: true,
+  length: {maximum: 20}
 
   def star_user(user_id)
     stars.find_by(user_id: user_id)

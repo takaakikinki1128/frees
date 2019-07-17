@@ -17,10 +17,7 @@
             = link_to "詳細", "/tweets/#{tweet.id}", method: :get,class:"show-btn"
           .show-text
             = tweet.text
-  
-
       .user-show-page
         = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 250, id: "mv" if tweet.video.present?
         = image_tag tweet.image.url,loop: true, controls: true, width: 250, id: "img" if tweet.image.present?
-      
-   
+  = paginate(@tweets)
