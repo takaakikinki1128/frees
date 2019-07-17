@@ -51,4 +51,9 @@ $(function(){
   },function(){
     $(this).stop().animate({'font-size':'18px'}, 250);
   })
+  $(".index-user-name").hover(function(){
+    $(this).css('color','black')
+  },function(){
+    $(this).css('color','#666')
+  })
 })
