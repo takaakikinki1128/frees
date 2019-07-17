@@ -1,15 +1,18 @@
 .new-contents{
   background: url(backgroundimage.jpg);
-  height: 100vh;
+  height: 100%;
+  width:100%;
   
   .one-new-tweets{
-    text-align: center;
+    // text-align: center;
     padding-top:30px;
+    display: block; 
     h3{
       font-size:30px;
     }
     .new-form{
       padding-top:20px;
+      display: flex;
       .new-text{
         font-size:20px;
       }
@@ -28,8 +31,11 @@
         margin-right: 15px;
       }
       .new_video{
-        padding-left:100px;
         font-size:20px;
+      }
+      .new-img{
+        text-align: center;
+
       }
     }
     .new-category-form{

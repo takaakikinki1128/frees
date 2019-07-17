@@ -14,66 +14,74 @@
 
 
   .index-all{
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     background: url(backgroundimage.jpg);
+    .one-index-content{
+      padding-top:60px;
+      .title-username{
+        padding-top:20px;
+        padding-left:20px;
+        .home-icon{
+          color:rgba(221, 23, 23, 0.76);
+          font-size: 20px;
+          
+        }
+        .user-icon{
+          color: blue;
+          padding-left:50px;
+          a{
+            text-decoration: none;
+            color: #666;
+            font-size:18px;
 
-    .title-username{
-      padding-top:10px;
-      padding-left:20px;
-      .home-icon{
-        color:rgba(221, 23, 23, 0.76);
-        font-size: 20px;
-        
-      }
-      .user-icon{
-        color: blue;
-        padding-left:50px;
-        a{
-          text-decoration: none;
-          color: #666;
-          font-size:18px;
+          }
 
         }
+        .show-icon{
+          color: blue;
+          padding-left:50px;
+          a{
+            text-decoration: none;
+            color: black;
+            font-size:18px;
 
-      }
-      .show-icon{
-        color: blue;
-        padding-left:50px;
-        a{
-          text-decoration: none;
-          color: black;
-          font-size:18px;
-
+          }
         }
-      }
-      .edit-icon{
-        color: blue;
-        a{
-          text-decoration: none;
-          color: black;
-          font-size:18px;
+        .edit-icon{
+          color: blue;
+          a{
+            text-decoration: none;
+            color: black;
+            font-size:18px;
 
+          }
         }
-      }
-      .delete-icon{
-        color: blue;
-        a{
-          text-decoration: none;
-          color: black;
-          font-size:18px;
+        .delete-icon{
+          color: blue;
+          a{
+            text-decoration: none;
+            color: black;
+            font-size:18px;
 
+          }
         }
-      }
-      
+      }  
     }
     .video-image{
       margin-top:10px;
       margin-left:40px;
-      .img{
-        padding-left:20px;
+      position: relative;
+      .video{
+        position: absolute;
       }
-    }
-    
+      .img{
+        position: absolute;
+        padding-left: 20px;
+      }
+    }  
   }
-
+  .page_tag{
+    padding-top:60px;
+    text-align: center;
+  }
 }
