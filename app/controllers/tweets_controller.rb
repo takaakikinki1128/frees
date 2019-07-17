@@ -7,7 +7,7 @@ class TweetsController < ApplicationController
 
   def create
     
-    Tweet.create(name: tweet_params[:name],image: tweet_params[:image],text: tweet_params[:text],video: tweet_params[:video],user_id: current_user.id)
+    Tweet.create(name: tweet_params[:name],image: tweet_params[:image],text: tweet_params[:text],video: tweet_params[:video],user_id: current_user.id,category_id:params[:category_id] )
   end
 
   def new
@@ -50,7 +50,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet).permit(:name,:image,:text,:video)
+    params.require(:tweet).permit(:name,:image,:text,:video,:category_id)
   end
 
   def move_to_index
