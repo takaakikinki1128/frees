@@ -14,5 +14,5 @@ class Tweet < ApplicationRecord
   def star_user(user_id)
     stars.find_by(user_id: user_id)
   end
-
+  
 end

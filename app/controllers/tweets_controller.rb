@@ -2,7 +2,6 @@ class TweetsController < ApplicationController
   
   def index
     @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("created_at DESC")
-   
   end
 
   def create
@@ -45,8 +44,8 @@ class TweetsController < ApplicationController
     if user_signed_in?
       @star = @stars.where("user_id = ?",current_user.id)
     end
+    
   end
-
   private
 
   def tweet_params

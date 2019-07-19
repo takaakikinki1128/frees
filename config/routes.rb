@@ -3,9 +3,11 @@ Rails.application.routes.draw do
     root 'tweets#index'
   else
   resources :tweets do
+   
     resources :comments, only: [:create,:destroy,:edit,:update]        
     resources :stars, only: [:create, :destroy]
-          
   end
+  resources :categories,only:[:index,:new]
+    
   resources :users, only: [:show]
 end

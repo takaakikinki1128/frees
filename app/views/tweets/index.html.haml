@@ -5,12 +5,13 @@
       = image_tag "store-image.jpg"
       = image_tag "aaa.jpg"
       = image_tag "image-coffce.jpg"
+     
 
   .index-all
     - @tweets.each do |tweet|
       .one-index-content
         .title-username
-          %i.fas.fa-home.home-icon
+          %i.fas.fa-home.home-icon     
           = tweet.name
           %i.far.fa-user.user-icon
             =link_to tweet.user.nickname,user_path(tweet.user.id),class:"index-user-name"
@@ -24,6 +25,7 @@
         .video-image
           = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 250,class:"mv" if tweet.video.present?
           = image_tag tweet.image.url,loop: true, controls: true, width: 250,class: "img" if tweet.image.present?
+    
     .page_tag
       = paginate(@tweets)
 
