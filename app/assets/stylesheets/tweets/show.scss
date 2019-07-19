@@ -35,7 +35,16 @@
     }
     .show-tweet-text{
       text-align: center;
+      font-size:18px;
+      padding-top:20px;
     }
+  }
+  .video-img{
+    text-align: center;
+    padding: 30px 0;
+  }
+  .img-type{
+    text-align: center;
   }
   
   .comments-tweet{
@@ -50,6 +59,7 @@
       }
       .comment_text{
         padding-bottom: 20px;
+        font-size:20px;
         .comment-btn{
           border: 1px solid black;
           background: #fff;
@@ -107,6 +117,7 @@
       .commenter_text{
         padding-top:15px;
         margin-right:60px;
+        font-size:18px;
       }
       .commenter-icon{
         color: #333;
@@ -139,6 +150,10 @@
           }
         }
       }
+    }
+    .comments-page{
+      text-align: center;
+      padding-top:30px;
     }
   }
 }

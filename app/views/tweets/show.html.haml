@@ -11,10 +11,11 @@
         = link_to '削除', "/tweets/#{@tweet.id}", method: :delete
 
     .show-tweet-text
-    = @tweet.text
+      = @tweet.text
   .video-img
-    = video_tag @tweet.video_url.to_s,loop: true, controls: true, width: 250, id: "mv" if @tweet.video.present?
-    = image_tag @tweet.image.url,loop: true, controls: true, width: 250, id: "img" if @tweet.image.present?
+    = video_tag @tweet.video_url.to_s,loop: true, controls: true, width: 500, id: "mv" if @tweet.video.present?
+  .img-type
+    = image_tag @tweet.image.url,loop: true, controls: true, width: 500, id: "img" if @tweet.image.present?
     
   .comments-tweet
     - if current_user && @tweet.user_id != current_user.id
@@ -61,4 +62,5 @@
                 = link_to "削除", "/tweets/#{params[:id]}/comments/#{comment.id}",method: :delete,class:"comments-delete-btn"
               %i.far.fa-edit.commenter-edit-icon
                 = link_to "編集", "/tweets/#{params[:id]}/comments/#{comment.id}/edit",method: :get,class:"comments-edit-btn"
-    = paginate(@comments)       
+    .comments-page           
+      = paginate(@comments)       

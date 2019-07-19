@@ -1,18 +1,19 @@
 .new-contents{
   background: url(backgroundimage.jpg);
-  height: 100%;
+  height: 100vh;
   width:100%;
   
   .one-new-tweets{
-    // text-align: center;
+    text-align: center;
     padding-top:30px;
-    display: block; 
+    // display: block; 
     h3{
       font-size:30px;
+      text-align: center;
     }
     .new-form{
       padding-top:20px;
-      display: flex;
+      // display: flex;
       .new-text{
         font-size:20px;
       }
@@ -32,10 +33,7 @@
       }
       .new_video{
         font-size:20px;
-      }
-      .new-img{
         text-align: center;
-
       }
     }
     .new-category-form{
@@ -48,6 +46,7 @@
       .category-select-box{
         width:100px;
         height:40px;
+        cursor: pointer;
       }
     }
     .actions-new{
