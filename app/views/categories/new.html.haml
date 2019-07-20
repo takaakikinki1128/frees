@@ -1,4 +1,9 @@
 .category-new-contents
-  - @genre.each do |genre1|
-    - genre1.each do |genre2|
-      = genre2.name
+  .category-genre
+    - @genre.each do |genre1|
+      - genre1.each do |genre2|
+        .one-genre
+          %i.fas.fa-home
+          = genre2.name
+          = video_tag genre2.video_url.to_s,loop: true, controls: true, width: 250,class:"mv" if genre2.video.present?
+          = image_tag genre2.image.url,loop: true, controls: true, width: 250,class: "img" if genre2.image.present?
