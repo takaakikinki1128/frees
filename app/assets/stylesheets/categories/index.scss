@@ -1,12 +1,14 @@
-.category-ndex-contents{
+.category-index-contents{
   height:100vh;
   width:100%;
   background: url(backgroundimage.jpg);
   .category-all{
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    padding:30px 0;
-
+    // display:block;
+    padding:50px;
+    .cheack_box-contents{
+    }
   }
 }

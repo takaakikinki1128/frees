@@ -23,10 +23,21 @@
     .one-signed{
       .field{
         padding-top:15px;
+        color:black;
+        .nickname{
+          color:#fff;
+        }
         .sign-form{
           width:250px;
           height:40px;
           font-size:20px;
+        }
+        .mail-adress{
+          color:#fff;
+        }
+        .password{
+          color:#fff;
+
         }
       }
       .actions{

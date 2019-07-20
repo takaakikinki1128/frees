@@ -32,12 +32,12 @@
         - if @star.present?
           - @star.each do |star|
             .item-button-dislike
-              =link_to tweet_star_path(@tweet.id,star.id), method: "DELETE",remote: true   do
+              =link_to tweet_star_path(@tweet.id,star.id), method: "DELETE"   do
                 %i.fas.fa-heart.star-delete-icon
                   = @stars_count
         - else
           .item-button-click
-            =link_to tweet_stars_path(@tweet.id), method: "POST",remote: true   do
+            =link_to tweet_stars_path(@tweet.id), method: "POST"  do
               %i.fas.fa-heart.star-click-icon
                 = @stars_count
     -else
