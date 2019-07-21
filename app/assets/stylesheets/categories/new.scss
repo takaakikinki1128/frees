@@ -1,8 +1,48 @@
 .category-new-contents{
-  background: url(backgroundimage.jpg);
-  height:100vh;
+  height:200vh;
   width:100%;
+  background: url(backgroundimage.jpg);
+
   .category-genre{
-    padding-top:30px;
+    margin-bottom: 10px;
+    .one-genre{
+      padding-top:30px;
+      .tenant-name{
+        padding-bottom: 20px;
+        .category-home-icon{
+          color:red;
+          font-size:18px;
+        }
+        .category-user-icon{
+          color: blue;
+          padding-left:50px;
+          font-size:18px;
+          a{
+            text-decoration: none;
+            color: #666;
+            font-size:18px;
+          }
+        }
+        .category-show-icon{
+          color: blue;
+          padding-left:50px;
+          font-size:18px;
+          a{
+            text-decoration: none;
+            color: black;
+            font-size:18px;
+          }
+        }
+      }
+      .video-category{
+        padding-left:30px;
+        video{
+          float: left;
+        }
+        img{
+          padding-left:20px;
+        }
+      }
+    }
   }
 }
