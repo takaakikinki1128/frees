@@ -12,10 +12,31 @@
 
       .edit-form
         = f.label :動画,class:"edit_item"
-        = f.file_field :video
+        = f.file_field :video,class:"video-edit-form"
 
       .edit-form
         = f.label :画像,class:"edit_item"
-        = f.file_field :image
+        = f.file_field :image,class:"video-edit-form"
+      .edit-form
+        = f.label :カテゴリー,class:"category-edit-label"
+        %select.category-select-box-edit{name: "category_id"}
+          %option{value: "---"} ----
+          %option{value: 1} 本屋
+          %option{value: 2} ジム
+          %option{value: 3} パチンコ屋
+          %option{value: 4} カフェ
+          %option{value: 5} ファミレス
+          %option{value: 6} 雑貨屋
+          %option{value: 7} 美容室
+          %option{value: 8} 理容室
+          %option{value: 9} ラーメン屋
+          %option{value: 10} 焼肉屋
+          %option{value: 11} 遊園地
+          %option{value: 12} 洋服屋
+          %option{value: 13} 居酒屋
+          %option{value: 14} 病院
+          %option{value: 15} 和菓子屋
+          %option{value: 16} スーパー
+          %option{value: 17} 家電量販店
       .actions-edits
         = f.submit "SENT",class:"btn_edit"

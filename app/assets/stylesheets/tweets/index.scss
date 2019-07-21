@@ -20,7 +20,7 @@
       padding-top:60px;
       .title-username{
         padding-top:20px;
-        padding-left:20px;
+        padding-left:60px;
         .home-icon{
           color:rgba(221, 23, 23, 0.76);
           font-size: 20px;
@@ -70,16 +70,11 @@
     }
     .video-image{
       margin-top:10px;
-      margin-left:40px;
-      position: relative;
-      .video{
-        position: absolute;
-      }
-      .img{
-        position: absolute;
-        padding-left: 20px;
-      }
+      text-align: center;
     }  
+    .img-index{
+      text-align: center;
+    }
   }
   .page_tag{
     padding-top:60px;

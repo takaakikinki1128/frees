@@ -33,10 +33,22 @@
         margin-right: 15px;
       }
       .edit_item{
-        padding-left:100px;
         font-size:20px;
         font-family: 'Times New Roman', Times, serif;
 
+      }
+      .video-edit-form{
+        display: inline;
+      }
+      .category-edit-label{
+        font-size:20px;
+        font-family: 'Times New Roman', Times, serif;
+
+      }
+      .category-select-box-edit{
+        width:100px;
+        height:40px;
+        cursor: pointer;
       }
     }
     .actions-edits{

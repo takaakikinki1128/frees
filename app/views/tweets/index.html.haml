@@ -23,8 +23,9 @@
             %i.far.fa-trash-alt.delete-icon
               = link_to '削除', "/tweets/#{tweet.id}", method: :delete,class:"contents-btn"
         .video-image
-          = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 250,class:"mv" if tweet.video.present?
-          = image_tag tweet.image.url,loop: true, controls: true, width: 250,class: "img" if tweet.image.present?
+          = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 300,class:"mv" if tweet.video.present?
+        .img-index
+          = image_tag tweet.image.url,loop: true, controls: true, width: 300,class: "img" if tweet.image.present?
     
     .page_tag
       = paginate(@tweets)
