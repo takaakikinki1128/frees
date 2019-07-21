@@ -1,7 +1,8 @@
 .show-tweets
   .show-tweet-name
     %i.fas.fa-home.tweet-show-icon
-    = @tweet.name
+    .tweet_show-tweet-name
+      = @tweet.name
     %i.far.fa-user.show-user-icon
       = link_to @tweet.user.nickname,"/users/#{@tweet.user.id}",class:"tweet-user_name"
     - if user_signed_in? && current_user.id == @tweet.user_id

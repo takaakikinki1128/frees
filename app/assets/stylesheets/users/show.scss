@@ -1,6 +1,6 @@
 .show-contents{
   background: url(backgroundimage.jpg);
-  height:180vh;
+  height:300vh;
   width: 100%;
   .show-name{
     text-align: center;
@@ -17,6 +17,14 @@
         .show-home-icon{
           color:red;
           font-size:18px;
+          float: left;
+          margin:0 6px;
+        }
+        .user_show-tweet-name{
+          font-size:20px;
+          margin-bottom: 10px;
+          font-family: 'Times New Roman', Times, serif;
+
         }
         .show-edit-icon{
           color: blue;

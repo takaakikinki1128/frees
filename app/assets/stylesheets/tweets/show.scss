@@ -6,10 +6,18 @@
     .tweet-show-icon{
       color:rgba(221, 23, 23, 0.76);
       font-size: 20px;
+      float: left;
+      margin-right:6px;
+    }
+    .tweet_show-tweet-name{
+      font-size:20px;
+      font-family: 'Times New Roman', Times, serif;
+      margin-bottom: 10px;
     }
     .show-user-icon{
       color: blue;
       padding-left:50px;
+      font-size:20px;
       a{
         text-decoration: none;
         color: #666;
