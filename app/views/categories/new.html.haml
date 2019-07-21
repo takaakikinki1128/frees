@@ -3,7 +3,15 @@
     - @genre.each do |genre1|
       - genre1.each do |genre2|
         .one-genre
-          %i.fas.fa-home
-          = genre2.name
-          = video_tag genre2.video_url.to_s,loop: true, controls: true, width: 250,class:"mv" if genre2.video.present?
-          = image_tag genre2.image.url,loop: true, controls: true, width: 250,class: "img" if genre2.image.present?
+          .tenant-name
+            %i.fas.fa-home.category-home-icon
+            = genre2.name
+            %i.far.fa-user.category-user-icon
+              = link_to genre2.user.nickname,user_path(genre2.user.id),class:"index-user-name"
+            %i.far.fa-clipboard.category-show-icon
+              = link_to "詳細",tweet_path(genre2.id),class:"contents-btn"
+          .video-category
+            = video_tag genre2.video_url.to_s,loop: true, controls: true, width: 250 if genre2.video.present?
+            = image_tag genre2.image.url,loop: true, controls: true, width: 250 if genre2.image.present?
+    -# = paginate(@genre2)
+  
