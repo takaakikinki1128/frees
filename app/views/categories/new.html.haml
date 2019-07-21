@@ -5,7 +5,8 @@
         .one-genre
           .tenant-name
             %i.fas.fa-home.category-home-icon
-            = genre2.name
+            .category-tweet-name
+              = genre2.name
             %i.far.fa-user.category-user-icon
               = link_to genre2.user.nickname,user_path(genre2.user.id),class:"index-user-name"
             %i.far.fa-clipboard.category-show-icon

@@ -1,5 +1,5 @@
 .category-new-contents{
-  height:200vh;
+  height:300vh;
   width:100%;
   background: url(backgroundimage.jpg);
 
@@ -18,9 +18,14 @@
         .category-home-icon{
           color:red;
           font-size:18px;
-          a{
-            font-size:18px;
-          }
+          float: left;
+          margin-right:6px;
+          
+        }
+        .category-tweet-name{
+          font-size:20px;
+          margin-bottom: 10px;
+          font-family: 'Times New Roman', Times, serif;
 
         }
         .category-user-icon{

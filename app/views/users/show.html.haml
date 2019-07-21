@@ -9,7 +9,8 @@
       .one-show-content
         .title-show-name
           %i.fas.fa-home.show-home-icon
-          = tweet.name
+          .user_show-tweet-name
+            = tweet.name
           - if user_signed_in? && current_user.id == tweet.user.id
             %i.far.fa-clipboard.show-second-icon
               = link_to "詳細", "/tweets/#{tweet.id}", method: :get,class:"show-btn"

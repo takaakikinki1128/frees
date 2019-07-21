@@ -11,8 +11,9 @@
     - @tweets.each do |tweet|
       .one-index-content
         .title-username
-          %i.fas.fa-home.home-icon     
-          = tweet.name
+          %i.fas.fa-home.home-icon    
+          .index-tweet-name
+            = tweet.name
           %i.far.fa-user.user-icon
             =link_to tweet.user.nickname,user_path(tweet.user.id),class:"index-user-name"
           %i.far.fa-clipboard.show-icon
