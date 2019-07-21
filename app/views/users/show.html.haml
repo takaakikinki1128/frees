@@ -11,6 +11,8 @@
           %i.fas.fa-home.show-home-icon
           = tweet.name
           - if user_signed_in? && current_user.id == tweet.user.id
+            %i.far.fa-clipboard.show-second-icon
+              = link_to "詳細", "/tweets/#{tweet.id}", method: :get,class:"show-btn"
             %i.far.fa-edit.show-edit-icon
               = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get,class:"show-btn"
             %i.far.fa-trash-alt.show-delete-icon
