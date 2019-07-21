@@ -17,14 +17,16 @@
               = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get,class:"show-btn"
             %i.far.fa-trash-alt.show-delete-icon
               = link_to '削除', "/tweets/#{tweet.id}", method: :delete,class:"show-btn"
-            
-            .show-text
-              = tweet.text
+            %i.far.fa-clipboard.show-second-icon
+              = link_to "詳細", "/tweets/#{tweet.id}", method: :get,class:"show-btn"
+           
           - else
             %i.far.fa-clipboard.show-second-icon
               = link_to "詳細", "/tweets/#{tweet.id}", method: :get,class:"show-btn"
-        .user-show-page
-          = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 250 if tweet.video.present?
-          = image_tag tweet.image.url,loop: true, controls: true, width: 250 if tweet.image.present?
-  .show-page_tag
-    = paginate(@tweets)
+            
+        .user-show-video
+          = video_tag tweet.video_url.to_s,loop: true, controls: true, width: 300, id: "mv" if tweet.video.present?
+        .user-show-img
+          = image_tag tweet.image.url,loop: true, controls: true, width: 300, id: "img" if tweet.image.present?
+    .show-page_tag
+      = paginate(@tweets)

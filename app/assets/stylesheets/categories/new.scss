@@ -4,19 +4,31 @@
   background: url(backgroundimage.jpg);
 
   .category-genre{
-    margin-bottom: 10px;
+
+    padding-top:30px;
+    margin-bottom:100px;
+    
+
     .one-genre{
-      padding-top:30px;
+      padding-left:30px;
+      padding-bottom: 30px;
+      
       .tenant-name{
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         .category-home-icon{
           color:red;
           font-size:18px;
+          a{
+            font-size:18px;
+          }
+
         }
         .category-user-icon{
           color: blue;
           padding-left:50px;
           font-size:18px;
+
+
           a{
             text-decoration: none;
             color: #666;
@@ -27,22 +39,26 @@
           color: blue;
           padding-left:50px;
           font-size:18px;
+
           a{
             text-decoration: none;
             color: black;
             font-size:18px;
+
           }
         }
       }
       .video-category{
-        padding-left:30px;
-        video{
-          float: left;
-        }
-        img{
-          padding-left:20px;
-        }
+        margin-top:10px;
+        text-align: center;
+      }
+      .img-category{
+        text-align: center;
       }
     }
+  }
+  .category-pagenate{
+    text-align: center;
+
   }
 }
