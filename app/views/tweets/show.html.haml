@@ -11,7 +11,10 @@
       %i.far.fa-trash-alt.show-delete-icon
         = link_to '削除', "/tweets/#{@tweet.id}", method: :delete
 
-    .show-tweet-text
+  .show-tweet-text
+    %i.fas.fa-walking.tweet-text-icon
+    紹介文
+    .lll
       = @tweet.text
   .video-img
     = video_tag @tweet.video_url.to_s,loop: true, controls: true, width: 500, id: "mv" if @tweet.video.present?
