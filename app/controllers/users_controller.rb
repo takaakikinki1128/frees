@@ -4,4 +4,7 @@ class UsersController < ApplicationController
     @nickname = user.nickname
     @tweets = user.tweets.page(params[:page]).per(4).order("created_at DESC")
   end
+
+  def search
+  end
 end
