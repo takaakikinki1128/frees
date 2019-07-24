@@ -27,11 +27,12 @@
         .comment-new
           .aaa
             コメントを書く
-        
+          .error-comment-text
           .comment_text
             = f.label :コメント
             = f.text_field :text,placeholder:"100文字未満",class:"comment-field"
             = f.submit "SENT",class:"comment-btn"
+          
       .star-counts
         - if @star.present?
           - @star.each do |star|

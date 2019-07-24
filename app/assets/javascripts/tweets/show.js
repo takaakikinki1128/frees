@@ -45,3 +45,28 @@ $(function(){
     $(this).css('color','#666')
   })
 })
+
+$(function(){
+  $("#new_comment").validate({
+    rules : {
+      "comment[text]": {
+        required: true
+       }
+      },
+      messages: {
+        "comment[text]": {
+          required: " コメントを入力してください"
+         }
+      },
+      errorPlacement: function(error, element) {
+        if(element.attr("name")=="comment[text]")
+        {
+          error.insertAfter(".error-comment-text");	
+        }
+        else{
+          error.insertAfter(element);	
+        }
+      }
+      
+  })
+})

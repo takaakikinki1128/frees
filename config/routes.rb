@@ -9,5 +9,10 @@ Rails.application.routes.draw do
   end
   resources :categories,only:[:index,:new]
     
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    collection do
+      get 'search'
+    end
+  end
+  
 end

@@ -8,10 +8,12 @@
           = f.label :ニックネーム,class:"nickname"
           %br/
           = f.text_field :nickname, autofocus: true, maxlength: "10",placeholder: '例）takashi',class:"sign-form"
+        .error-devise-nickname
         .field
           = f.label :メールアドレス,class:"mail-adress"
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: '例）takashi@gmail.com',class:"sign-form"
+        .error-devise-email
         .field
           = f.label :パスワード,class:"password"
           - if @validatable
@@ -19,5 +21,6 @@
               (#{@minimum_password_length} characters minimum)
           %br/
           = f.password_field :password, autocomplete: "new-password",placeholder: '6文字以上',class:"sign-form"
+        .error-devise-password
         .actions
           = f.submit "完了",class:"sing-btn"
