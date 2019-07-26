@@ -15,5 +15,4 @@
             = video_tag genre2.video_url.to_s,loop: true, controls: true, width: 300 if genre2.video.present?
           .img-category
             = image_tag genre2.image.url,loop: true, controls: true, width: 300 if genre2.image.present?
-  .category-pagenate
-    = paginate(@genre2)
+  
