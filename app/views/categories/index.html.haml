@@ -2,12 +2,10 @@
   .category-all
     .category-title
       好みのお店を見つける
-    .msg-category
-      選択せずに検索するとカテゴリー登録されていないお店を検索できます
+
     = form_tag("/categories/new",method: :get) do
       .cheack_box-contents
         .one-category
           = collection_check_boxes :category, :keywords, Category.all, :id, :name,class:"category-www"
-        
         .search-form-btn
           = submit_tag '検索',class:"saerch__bottun"
