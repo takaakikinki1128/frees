@@ -6,5 +6,18 @@ class UsersController < ApplicationController
   end
 
   def search
+    
   end
+
+  def index
+    @users = User.where('nickname LIKE(?)',"%#{params[:keyword]}%").limit(15)
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
+  end
+
+  
 end
