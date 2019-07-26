@@ -23,6 +23,9 @@ $(function(){
          },
         "tweet[text]":{
             required: "入力してください"
+         },
+         "category_id":{
+          required: "入力してください"
          }
       },
       errorPlacement: function(error, element) {
@@ -32,6 +35,9 @@ $(function(){
         }
         else if(element.attr("name")=="tweet[text]") {
           error.insertAfter(".error-new-text");
+        }
+        else if(element.attr("name")=="category_id") {
+          error.insertAfter(".error-new-category");
         }
         else{
           error.insertAfter(element);	

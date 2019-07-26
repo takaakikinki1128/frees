@@ -20,7 +20,7 @@
       .new-category-form
         = f.label :カテゴリー,class:"category-label"
         %select.category-select-box{name: "category_id"}
-          %option{value: "---"} ----
+          %option{value: ""} ----
           %option{value: 1} 本屋
           %option{value: 2} ジム
           %option{value: 3} パチンコ屋
@@ -38,5 +38,6 @@
           %option{value: 15} 和菓子屋
           %option{value: 16} スーパー
           %option{value: 17} 家電量販店
+      .error-new-category
       .actions-new
         = f.submit "SENT",class:"new-btn"
