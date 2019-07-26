@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :stars, dependent: :destroy
   has_one :category, dependent: :destroy
 
-
+  
 end
