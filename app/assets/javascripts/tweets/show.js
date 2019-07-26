@@ -20,6 +20,19 @@ $(function(){
   },function(){
     $(this).stop().animate({'color': 'black', 'backgroundColor': '#FFF'}, 300);
   })
+
+  $('.tweet_show-edit').hover(function(){
+    $(this).stop().animate({'font-size': '23px'}, 300);
+  },function(){
+    $(this).stop().animate({'font-size': '18px'}, 300);
+  })
+
+  $('.tweet_show-delete').hover(function(){
+    $(this).stop().animate({'font-size': '23px'}, 300);
+  },function(){
+    $(this).stop().animate({'font-size': '18px'}, 300);
+  })
+
 })
 
 $(function(){

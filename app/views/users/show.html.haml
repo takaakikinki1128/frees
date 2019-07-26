@@ -18,8 +18,7 @@
               = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get,class:"show-btn"
             %i.far.fa-trash-alt.show-delete-icon
               = link_to '削除', "/tweets/#{tweet.id}", method: :delete,class:"show-btn"
-            %i.far.fa-clipboard.show-second-icon
-              = link_to "詳細", "/tweets/#{tweet.id}", method: :get,class:"show-btn"
+           
            
           - else
             %i.far.fa-clipboard.show-second-icon
